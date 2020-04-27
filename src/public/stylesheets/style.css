@@ -5,6 +5,7 @@
   --color04: rgba(176,125,251,0.1)/*essa é da #B07DFB*/
 }
 body, header, h1, p,li,ul,a,button{
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -28,6 +29,7 @@ header span{
   font-size: 2em;
 }
 header{
+  display: block;
   box-sizing: border-box;
   grid-area: header;
   background: linear-gradient(135deg, var(--color01),var(--color02));
@@ -71,6 +73,31 @@ header nav ul:hover{
   
 }
 /*Editavel*/
-#container02{
+#container-02{
+  display: subgrid;
+  grid-template-rows: auto;
+  grid-template-columns:  1fr minmax(1fr, 2fr) 1fr;
+  grid-template-areas: 
+  ". h1  ."
+  "item item item"
+  ;
+}
+#container-02 h1{
+  grid-area: h1;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  font-size: 2.5em;
+  background-color: white;
+  color: var(--color02);
+  text-shadow: 1px 1px #ccc;
+  
+}
+#container-02 div{
+  grid-area: item;
+}
 
+#container-02 ul{
+  padding: 1%;
+  border: solid 1px black;
 }

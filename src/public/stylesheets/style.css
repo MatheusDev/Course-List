@@ -1,8 +1,76 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+:root{
+  --color01: #8844ee;
+  --color02: #B07DFB;
+  --color03: rgba(136,68,238,0.8)/*essa é da 8844ee*/
+  --color04: rgba(176,125,251,0.1)/*essa é da #B07DFB*/
 }
+body, header, h1, p,li,ul,a,button{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family:  Georgia, Arial, sans-serif, serif;
+}
+#container{
+  display: grid;
+  grid-template-columns: 1fr minmax(1fr,2fr) 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "header       header       header" 
+  "container02  container02  constainer02"
+  "footer       footer       footer"
+  ;
+}
+/*Header*/
+header span{
+  text-align: justify;
+  color: white;
+  font-size: 2em;
+}
+header{
+  box-sizing: border-box;
+  grid-area: header;
+  background: linear-gradient(135deg, var(--color01),var(--color02));
+}
+header nav{
+  box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+}
+header nav ul{
+  box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+  border-radius: 4px;
+  margin-right: 20px;
+  border: solid 1px var(--color01);
+  padding: 1%;
+  background-color: var(--color01);
+  float: right;
+  transition: .1s ease-out;
 
-a {
-  color: #00B7FF;
+}
+header nav ul li{
+  float: left;
+  list-style: none;
+  transition: .5s ease-out;
+}
+header nav ul li a{
+  font-size: 1.5em;
+  text-shadow: 2px 2px var(--color01);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+li + li{
+  padding-left: 20px;
+}
+header nav ul li :hover{
+  text-shadow: 2px 2px var(--color02);
+  color: white;
+  border-bottom: 2px white solid;
+}
+header nav ul:hover{
+  background-color: var(--color04);
+  
+}
+/*Editavel*/
+#container02{
+
 }

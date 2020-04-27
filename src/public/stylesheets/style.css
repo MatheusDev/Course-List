@@ -5,7 +5,6 @@
   --color04: rgba(176,125,251,0.1)/*essa é da #B07DFB*/
 }
 body, header, h1, p,li,ul,a,button{
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -14,11 +13,11 @@ body{
 }
 #container{
   display: grid;
-  grid-template-columns: 1fr minmax(1fr,2fr) 1fr;
+  grid-template-columns: 1fr minmax(1fr, 2fr) 1fr;
   grid-template-rows: auto;
   grid-template-areas: 
   "header       header       header" 
-  "container02  container02  constainer02"
+  "container02  container02  container02"
   "footer       footer       footer"
   ;
 }
@@ -29,6 +28,7 @@ header span{
   font-size: 2em;
 }
 header{
+  padding: 8px;
   display: block;
   box-sizing: border-box;
   grid-area: header;
@@ -60,7 +60,7 @@ header nav ul li a{
   text-align: center;
   text-decoration: none;
 }
-li + li{
+header li + li{
   padding-left: 20px;
 }
 header nav ul li :hover{
@@ -73,31 +73,63 @@ header nav ul:hover{
   
 }
 /*Editavel*/
-#container-02{
+
+#container02{
+  grid-area: container02;
   display: subgrid;
   grid-template-rows: auto;
   grid-template-columns:  1fr minmax(1fr, 2fr) 1fr;
   grid-template-areas: 
-  ". h1  ."
+  ". h1 ."
   "item item item"
   ;
 }
-#container-02 h1{
-  grid-area: h1;
+#container02 h1{
   text-align: center;
+  grid-area: h1;
   box-sizing: border-box;
   padding: 20px;
   font-size: 2.5em;
-  background-color: white;
   color: var(--color02);
   text-shadow: 1px 1px #ccc;
   
 }
-#container-02 div{
+#container02 div{
   grid-area: item;
 }
 
-#container-02 ul{
+#container02 ul{
+  box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+  margin: 1%;
   padding: 1%;
-  border: solid 1px black;
+  border: solid 2px var(--color02);
+}
+#container02 ul li a{
+  color: var(--color01);
+  font-size: 1.2em;
+  text-decoration: none;
+  font-style: normal;
+  font-family: sans-serif;
+  text-shadow: 1px 1px #ccc;
+}
+
+#container02 button{
+  box-sizing: border-box;
+  background-color: var(--color02);
+  border-radius: 4px;
+  border:1px solid #af7dfb;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:16px;
+  padding: 8px;
+  margin: 8px 0 8px 8px;
+  text-decoration: none;
+  text-shadow:0px 1px 0px #cccccc;
+  transition: .1s ease-out;
+  /*box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);*/
+}
+#container02 button:hover {
+background: none;
+background-color: var(--color01);
 }
